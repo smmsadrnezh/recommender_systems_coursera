@@ -38,11 +38,11 @@ def add_predicts(df, corr, users):
 
 
 def extract_data():
-    df = pd.read_csv('movies.csv')
+    df = pd.read_csv('datasets/movies.csv')
     df['movie'] = df.apply(lambda x: x[0].split(":")[0], axis=1)
     df.drop(['name'], axis=1, inplace=True)
     df.set_index('movie', inplace=True, drop=True)
-    corr = pd.read_csv('correlations.csv', index_col=0, header=0)
+    corr = pd.read_csv('datasets/correlations.csv', index_col=0, header=0)
     return df, corr
 
 
